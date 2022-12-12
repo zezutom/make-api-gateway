@@ -1,0 +1,5 @@
+runtime: java17
+entrypoint: 'java -jar make-apps-generator-all.jar'
+handlers:
+  - url: /.*
+    script: this field is required, but ignored

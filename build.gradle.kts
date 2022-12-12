@@ -7,6 +7,7 @@ plugins {
     kotlin("jvm") version "1.7.22"
     id("io.ktor.plugin") version "2.2.1"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.7.22"
+    id("com.google.cloud.tools.appengine") version "2.4.5"
 }
 
 group = "com.langnerd"
@@ -16,6 +17,16 @@ application {
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
+}
+
+appengine {
+    stage {
+        setArtifact("build/libs/${project.name}-all.jar")
+    }
+    deploy {
+        projectId = "make-api-gateway"
+        version = "1"
+    }
 }
 
 repositories {
