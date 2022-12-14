@@ -12,6 +12,7 @@ plugins {
 
 group = "com.langnerd"
 version = "0.0.1"
+
 application {
     mainClass.set("com.langnerd.ApplicationKt")
 
@@ -22,6 +23,7 @@ application {
 appengine {
     stage {
         setArtifact("build/libs/${project.name}-all.jar")
+        setExtraFilesDirectories("static")
     }
     deploy {
         projectId = "make-api-gateway"
@@ -36,7 +38,13 @@ repositories {
 dependencies {
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version")
+    implementation("io.ktor:ktor-client-cio:$ktor_version")
+    implementation("io.ktor:ktor-client-core:$ktor_version")
+    implementation("io.ktor:ktor-client-logging:$ktor_version")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
     implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
+    implementation("io.ktor:ktor-server-cors:$ktor_version")
+    implementation("io.ktor:ktor-server-default-headers:$ktor_version")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-html-builder:$ktor_version")

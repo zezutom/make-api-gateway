@@ -1,4 +1,4 @@
-package com.langnerd.plugins
+package com.langnerd.plugins.server
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*

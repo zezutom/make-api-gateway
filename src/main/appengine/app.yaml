@@ -1,5 +1,10 @@
 runtime: java17
+
+env_variables:
+  MAKE_AUTH_TOKEN: "YOUR-INTEGROMAT-TOKEN"
+
 entrypoint: 'java -jar make-apps-generator-all.jar'
+
 handlers:
   - url: /.*
     script: this field is required, but ignored

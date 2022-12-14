@@ -1,4 +1,4 @@
-package com.langnerd.api.model
+package com.langnerd.model.internal
 
 @JvmInline
 value class Query(val value: String) {

@@ -1,8 +1,8 @@
-package com.langnerd.api
+package com.langnerd.web.handler
 
-import com.langnerd.api.model.ErrorResponse
-import com.langnerd.api.model.Request
-import com.langnerd.api.model.Response
+import com.langnerd.web.ErrorResponse
+import com.langnerd.web.Request
+import com.langnerd.web.Response
 import org.slf4j.LoggerFactory
 
 abstract class Handler<Req : Request> {
